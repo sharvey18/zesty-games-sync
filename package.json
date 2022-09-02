@@ -1,0 +1,25 @@
+{
+  "name": "zesty-wp-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharvey18/zesty-wp-sync.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharvey18/zesty-wp-sync/issues"
+  },
+  "homepage": "https://github.com/sharvey18/zesty-wp-sync#readme",
+  "dependencies": {
+    "@zesty-io/sdk": "^0.3.2",
+    "dotenv": "^16.0.2",
+    "node-fetch": "^2.6.7"
+  }
+}
