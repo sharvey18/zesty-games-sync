@@ -27,7 +27,6 @@ async function getZestyArticles() {
 async function run(res) {
   const zestyArticles = await getZestyArticles();
   const wpArticles = await getWPArticles();
-  let total = 0;
   // console.log(wpArticles);
   // console.log(zestyArticles);
   wpArticles.results.items.map(async (article) => {
@@ -43,7 +42,7 @@ async function run(res) {
       total++;
     }
   });
-  res.send(`synced ${total} articles`);
+  res.send(`synced articles`);
 }
 
 async function createItem(article) {
