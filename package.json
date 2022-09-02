@@ -1,10 +1,11 @@
 {
-  "name": "zesty-wp-sync",
+  "name": "zestyWPSync",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gcloud functions deploy zestyWPSync --env-vars-file .env.yaml"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@zesty-io/sdk": "^0.3.2",
     "dotenv": "^16.0.2",
+    "env-yaml": "^0.1.2",
     "node-fetch": "^2.6.7"
   }
 }
