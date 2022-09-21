@@ -1,23 +1,23 @@
 {
-  "name": "zestyWPSync",
+  "name": "zestyGamesSync",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gcloud functions deploy zestyWPSync --env-vars-file .env.yaml"
+    "deploy": "gcloud functions deploy zestyGamesSync --env-vars-file .env.yaml"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sharvey18/zesty-wp-sync.git"
+    "url": "git+https://github.com/sharvey18/zesty-games-sync.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sharvey18/zesty-wp-sync/issues"
+    "url": "https://github.com/sharvey18/zesty-games-sync/issues"
   },
-  "homepage": "https://github.com/sharvey18/zesty-wp-sync#readme",
+  "homepage": "https://github.com/sharvey18/zesty-games-sync#readme",
   "dependencies": {
     "@zesty-io/sdk": "^0.3.2",
     "dotenv": "^16.0.2",
