@@ -1,11 +1,11 @@
 {
-  "name": "zestyGamesSync",
+  "name": "zesty-games-sync",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gcloud functions deploy zestyGamesSync --env-vars-file .env.yaml"
+    "deploy": "gcloud functions deploy zesty-games-sync --env-vars-file .env.yaml"
   },
   "repository": {
     "type": "git",
