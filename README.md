@@ -12,4 +12,8 @@ Create the Zesty item.
 
 When creating the Zesty item, the article_tagss field will be a string where the WP articles array: taxonomy.tags will need to be iterated through.
 
-test
+change
+https://data-test.nba.com/data/v2022/json/mobile_teams/nba/2022/teams/suns_schedule.json
+to
+https://data.nba.com/data/v2022/json/mobile_teams/nba/2022/teams/suns_schedule.json
+On oct. 11
