@@ -28,16 +28,16 @@ async function run(res) {
     });
     let check = typeof insertGame === "undefined";
     if (check) {
-      await createItem(game);
+      await updateItem(game);
       total++;
     }
   });
   res.send(`synced games`);
 }
 
-async function createItem(game) {
+async function updateItem(game) {
   try {
-    const newItem = await sdk.instance.createItem(process.env.ZESTY_MODEL, {
+    const updateItem = await sdk.instance.updateItem(process.env.ZESTY_MODEL, {
       data: {
         game_id: game.gid,
         game_code: game.gcode,
@@ -49,13 +49,16 @@ async function createItem(game) {
         arena_city: game.ac,
         arena_state: game.as,
         game_status: game.st,
+        game_status_text: game.stt,
         visiting_team_record: game.v.re,
         visiting_team_abbreviation: game.v.ta,
         visiting_team_name: game.v.tn,
         visiting_team_city: game.v.tc,
+        visiting_team_score: game.v.s,
         home_team_record: game.h.re,
         home_team_abbreviation: game.h.ta,
         home_team_name: game.h.tn,
+        home_team_score: game.h.s,
         home_team_city: game.h.tc,
       },
       web: {
@@ -66,11 +69,48 @@ async function createItem(game) {
       },
     });
 
-    console.log(newItem);
+    console.log(updateItem);
   } catch (err) {
     console.trace(err);
   }
 }
+
+// async function createItem(game) {
+//   try {
+//     const newItem = await sdk.instance.createItem(process.env.ZESTY_MODEL, {
+//       data: {
+//         game_id: game.gid,
+//         game_code: game.gcode,
+//         game_date: game.gdte,
+//         home_team_time: game.htm,
+//         visitor_team_time: game.vtm,
+//         eastern_time: game.etm,
+//         arena_name: game.an,
+//         arena_city: game.ac,
+//         arena_state: game.as,
+//         game_status: game.st,
+//         visiting_team_record: game.v.re,
+//         visiting_team_abbreviation: game.v.ta,
+//         visiting_team_name: game.v.tn,
+//         visiting_team_city: game.v.tc,
+//         home_team_record: game.h.re,
+//         home_team_abbreviation: game.h.ta,
+//         home_team_name: game.h.tn,
+//         home_team_city: game.h.tc,
+//       },
+//       web: {
+//         canonicalTagMode: 1,
+//         metaLinkText: `${game.v.tn} vs ${game.h.tn}`,
+//         metaTitle: `${game.v.tn} vs ${game.h.tn}`,
+//         metaDescription: `${game.v.tn} vs ${game.h.tn}`,
+//       },
+//     });
+
+//     console.log(newItem);
+//   } catch (err) {
+//     console.trace(err);
+//   }
+// }
 
 exports.zestyGamesSync = async (req, res) => {
   // Set CORS headers for preflight requests
