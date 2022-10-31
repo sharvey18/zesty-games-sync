@@ -1,11 +1,11 @@
 {
-  "name": "zesty-games-sync",
+  "name": "zesty-games-sync-update",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gcloud functions deploy zesty-games-sync --env-vars-file .env.yaml"
+    "deploy": "gcloud functions deploy zestyGamesSyncUpdate --env-vars-file=.env.yaml --project=phoenix-suns-nba --trigger-http --allow-unauthenticated --runtime=nodejs16 --region=us-central1"
   },
   "repository": {
     "type": "git",

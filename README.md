@@ -17,3 +17,5 @@ https://data-test.nba.com/data/v2022/json/mobile_teams/nba/2022/teams/suns_sched
 to
 https://data.nba.com/data/v2022/json/mobile_teams/nba/2022/teams/suns_schedule.json
 On oct. 11
+
+to sync games manually use this url: https://zesty-games-sync-skszk6q72q-uc.a.run.app
