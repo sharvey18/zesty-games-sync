@@ -56,44 +56,32 @@ async function run(res) {
 }
 
 async function updateItem(sdk, zestyItem, game) {
+  zestyItem.data.game_id = game.gid;
+  zestyItem.data.game_code = game.gcode;
+  zestyItem.data.game_date = game.gdte;
+  zestyItem.data.home_team_time = game.htm;
+  zestyItem.data.visitor_team_time = game.vtm;
+  zestyItem.data.eastern_time = game.etm;
+  zestyItem.data.arena_name = game.an;
+  zestyItem.data.arena_city = game.ac;
+  zestyItem.data.arena_state = game.as;
+  zestyItem.data.game_status = game.st;
+  zestyItem.data.game_status_text = game.stt;
+  zestyItem.data.visiting_team_record = game.v.re;
+  zestyItem.data.visiting_team_abbreviation = game.v.ta;
+  zestyItem.data.visiting_team_name = game.v.tn;
+  zestyItem.data.visiting_team_city = game.v.tc;
+  zestyItem.data.visiting_team_score = game.v.s;
+  zestyItem.data.home_team_record = game.h.re;
+  zestyItem.data.home_team_abbreviation = game.h.ta;
+  zestyItem.data.home_team_name = game.h.tn;
+  zestyItem.data.home_team_score = game.h.s;
+  zestyItem.data.home_team_city = game.h.tc;
   try {
     const updateItem = await sdk.instance.updateItem(
       process.env.ZESTY_MODEL,
       zestyItem.meta.ZUID,
-      {
-        data: {
-          game_id: game.gid,
-          game_code: game.gcode,
-          game_date: game.gdte,
-          home_team_time: game.htm,
-          visitor_team_time: game.vtm,
-          eastern_time: game.etm,
-          arena_name: game.an,
-          arena_city: game.ac,
-          arena_state: game.as,
-          game_status: game.st,
-          game_status_text: game.stt,
-          visiting_team_record: game.v.re,
-          visiting_team_abbreviation: game.v.ta,
-          visiting_team_name: game.v.tn,
-          visiting_team_city: game.v.tc,
-          visiting_team_score: game.v.s,
-          home_team_record: game.h.re,
-          home_team_abbreviation: game.h.ta,
-          home_team_name: game.h.tn,
-          home_team_score: game.h.s,
-          home_team_city: game.h.tc,
-        },
-        web: {
-          canonicalTagMode: 1,
-          metaLinkText: `${game.v.tn} vs ${game.h.tn}`,
-          metaTitle: `${game.v.tn} vs ${game.h.tn}`,
-          metaDescription: `${game.v.tn} vs ${game.h.tn}`,
-        },
-        meta: {
-          masterZUID: zestyItem.meta.ZUID,
-        },
-      }
+      zestyItem
     );
 
     console.log(updateItem);
